@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light Professional Medical Theme */
+    --background: 0 0% 100%;
+    --foreground: 222 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 20% 10%;
+
+    /* Vibrant Blue - Primary brand color */
+    --primary: 200 95% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 200 95% 48%;
+    
+    /* Cyan for info cards */
+    --cyan: 188 85% 55%;
+    --cyan-foreground: 0 0% 100%;
+    
+    /* Pink for special highlights */
+    --pink: 330 85% 60%;
+    --pink-foreground: 0 0% 100%;
+    
+    /* Green for success */
+    --green: 142 76% 45%;
+    --green-foreground: 0 0% 100%;
+    
+    /* Purple for totals */
+    --purple: 265 85% 62%;
+    --purple-foreground: 0 0% 100%;
+
+    /* Orange for warnings */
+    --orange: 35 91% 60%;
+    --orange-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 222 20% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 222 15% 45%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 200 95% 55%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 200 95% 55%;
+
+    --radius: 0.75rem;
+
+    /* Chart colors for dashboard */
+    --chart-1: 200 95% 55%;
+    --chart-2: 142 76% 45%;
+    --chart-3: 35 91% 60%;
+    --chart-4: 265 85% 62%;
+    --chart-5: 330 85% 60%;
+
+    /* Status indicators */
+    --status-active: 142 76% 45%;
+    --status-pending: 35 91% 60%;
+    --status-discharged: 200 95% 55%;
+    --status-deceased: 0 84% 60%;
+
+    /* Excel connection indicator */
+    --excel-connected: 142 76% 45%;
+    --excel-disconnected: 0 84% 60%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 15% 20%;
+    --sidebar-primary: 200 95% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 222 15% 20%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 200 95% 55%;
+
+    /* Shadows for depth */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.5);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.6), 0 2px 4px -1px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.7), 0 4px 6px -2px hsl(0 0% 0% / 0.5);
+  }
+
+  .dark {
+    /* Dark Professional Medical Theme */
+    --background: 222 20% 8%;
+    --foreground: 210 20% 92%;
+
+    --card: 222 20% 12%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 222 20% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --secondary: 222 20% 18%;
+    --secondary-foreground: 210 20% 92%;
+
+    --muted: 222 20% 16%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 222 20% 20%;
+    --accent-foreground: 200 95% 55%;
+
+    --border: 222 20% 22%;
+    --input: 222 20% 18%;
+
+    --sidebar-background: 222 22% 6%;
+    --sidebar-foreground: 210 15% 85%;
+    --sidebar-accent: 222 22% 10%;
+    --sidebar-accent-foreground: 210 15% 85%;
+    --sidebar-border: 222 22% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    direction: rtl;
+    text-align: right;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+
+/* Custom utilities for medical system */
+@layer utilities {
+  .shadow-medical {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-medical-lg {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .text-status-active {
+    color: hsl(var(--status-active));
+  }
+
+  .text-status-pending {
+    color: hsl(var(--status-pending));
+  }
+
+  .text-status-discharged {
+    color: hsl(var(--status-discharged));
+  }
+
+  .text-status-deceased {
+    color: hsl(var(--status-deceased));
+  }
+
+  .bg-status-active {
+    background-color: hsl(var(--status-active));
+  }
+
+  .bg-status-pending {
+    background-color: hsl(var(--status-pending));
+  }
+
+  .bg-status-discharged {
+    background-color: hsl(var(--status-discharged));
+  }
+
+  .bg-status-deceased {
+    background-color: hsl(var(--status-deceased));
+  }
+}
